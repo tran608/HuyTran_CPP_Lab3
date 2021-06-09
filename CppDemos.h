@@ -1,19 +1,10 @@
-﻿
-
-/*
-*..................................................................
-* Name: Tran Phuong Anh Nguyen
-* Student ID: 040990608
-* Name: Huy Vo
-* Student ID: 040993746
-* Course: CST8219 – C++ Programming, Lab Section: 011
-* Lab 2
-* Professor: Paulo Sousa
-* Due Date: June 5, 2021
-* Date: May 22, 2021
-* Contents: Game.h, Game.cpp CMakeLists.txt, CppDemos.cpp, CppDemos.h, Action4_Screenshots_Lab2, Variables_Table_Lab2
-*..................................................................
-*/
+﻿/*******************************************************************
+* FILE:CppDemos.h
+* PURPOSE: For lab 3 Submission
+* AUTHORS: Tran Phuong Anh Nguyen - 040990608, Huy Vo - 040993746
+* PROFESSOR: Paulo Sousa
+* COURSE: CST8219_301
+*******************************************************************/
 #pragma once
 /*Including library and header files*/
 #include <iostream>

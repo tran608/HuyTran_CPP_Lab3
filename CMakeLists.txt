@@ -1,8 +1,11 @@
-﻿# CMakeList.txt : CMake project for Lab3_C++, include source and define
-# project specific logic here.
-#
+﻿################################################################### 
+# FILE: CMakeLists.txt
+# PURPOSE: For building lab 3
+# AUTHORS: Tran Phuong Anh Nguyen - 040990608, Huy Vo - 040993746
+# PROFESSOR: Paulo Sousa
+# COURSE: CST8219_301 
+###################################################################
 cmake_minimum_required (VERSION 3.8)
-
 project ("Lab3_C++")
 
 # Add source to this project's executable.
