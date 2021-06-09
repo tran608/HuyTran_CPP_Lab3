@@ -89,6 +89,38 @@ istream& operator>>(istream& is, Game& game) {
 
 };
 
+const Game& Game::operator=(const Game& game) {
+	this->setName(game.getName());
+	this->setNumPlayers(game.getNumPlayers());
+	this->setTimeout(game.getTimeout());
+	return this;
+}
+
+bool Game::operator==(const Game& game) {
+	bool isEqual = false;
+	
+	isEqual = (this->getName() == game.getName() &&
+		this->getNumPlayers() == game.getNumPlayers() &&
+		this->getTimeout() == game.getTimeout());
+	
+	return isEqual;
+}
+
+bool Game::operator!=(const Game& game) {
+	return !(operator == (game));
+}
+
+/*Game Game::operator++(int n) {
+	Game copy(this);
+	this->setNumerator(this->getNumerator() + 1);
+	return copy;
+}
+
+Game Game::operator++() {
+	this->setNumerator(this->getNumerator() + 1);
+	return this;
+}*/
+
 //Getters and Setters
 string Game::getName() const { return this->name; };
 int Game::getNumPlayers() const { return this->numPlayers; };

@@ -49,7 +49,12 @@ namespace CST8219 {
 
 		friend ostream& operator<<(ostream& os, const Game& game);
 		friend istream& operator>>(istream& is, const Game& game);
-		//const Game& Game::operator=(const Game& game);
+		
+		const Game& Game::operator=(const Game& game);
+		bool Game::operator==(const Game& game);
+		bool Game::operator!=(const Game& game);
+		Game Game::operator++();
+		Game Game::operator++(int n);
 	};
 }
 
