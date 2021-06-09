@@ -45,19 +45,63 @@ void Game::setGame(string n, int p, double t) {
 	this->timeout = t;
 }
 
+//const Game& Game::operator=(const Game& game) {
+//	this->setName(game.getName());
+//	this->setDenominator(f.getDenominator());
+//	return this;
+//}
+
+ostream&  operator <<(ostream& os, const Game& game) {
+	os << "Name: " << game.getName() << " - Numplayers: " << game.getNumPlayers() << " - Timeout: " << game.getTimeout() << endl;
+	return os;
+}
+
+istream& operator>>(istream& is, Game& game) {
+	string name;
+	int numplayers;
+	double timeout;
+	cout << "Enter the name: ";
+	getline(cin, name);
+	while (name.empty()) {
+
+		cout << "Please enter a valid non-empty name: ";
+		getline(cin, name);
+	};
+	cout << "Enter the number of players: ";
+	while (!(cin >> numplayers) || !(numplayers >= 1 && numplayers <= 10)) {
+		cout << "Please enter a valid number between 1 and 10: ";
+		cin.clear();
+		cin.ignore(256, '\n');
+	};
+
+	cout << "Enter the game duration: ";
+	while (!(cin >> timeout) || timeout < 0) {
+		cout << "Please enter a valid timeout larger than 0: ";
+		cin.clear();
+		cin.ignore(256, '\n');
+	};
+	cin.ignore(256, '\n');
+
+	game.setName(name);
+	game.setNumPlayers(numplayers);
+	game.setTimeout(timeout);
+	return is;
+
+};
+
 //Getters and Setters
-string Game::getName() { return this->name; };
-int Game::getNumPlayers() { return this->numPlayers; };
-double Game::getTimeout() { return this->timeout; };
+string Game::getName() const { return this->name; };
+int Game::getNumPlayers() const { return this->numPlayers; };
+double Game::getTimeout() const { return this->timeout; };
 void Game::setName(string name) { this->name = name; };
 void Game::setNumPlayers(int numPlayers) { this->numPlayers = numPlayers; };
 void Game::setTimeout(double timeout) { this->timeout = timeout; };
 
 vector<Player> Game::createPlayers() {
-	int i = 0;
+	int i;
 	for (i = 0; i < this->numPlayers; i++) {
 		string tempName;
-		cout << "Please enter the name of player " << i << ": ";
+		cout << "Please enter the name of player " << i+1 << ": ";
 		cin >> tempName;
 		Player tempPlayer(tempName);
 		this->playersList.push_back(tempPlayer);

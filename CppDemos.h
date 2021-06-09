@@ -22,6 +22,7 @@ void printAddress(Game);
 void changeGame(Game, string, int, double);
 Game createOneGame();
 
+
 vector<Game> createMultipleGames(int numberOfGames);
 
 

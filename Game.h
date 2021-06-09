@@ -6,6 +6,7 @@
 * COURSE: CST8219_301 
 *******************************************************************/
 #include<iostream>
+#include<fstream>
 #include<string>
 #include <vector>
 
@@ -37,14 +38,18 @@ namespace CST8219 {
 
 
 		//Getters and Setters
-		string getName();
-		int getNumPlayers();
-		double getTimeout();
+		string getName() const;
+		int getNumPlayers () const;
+		double getTimeout() const;
 		void setName(string name);
 		void setNumPlayers(int numPlayers);
 		void setTimeout(double timeout);
 		vector<Player> createPlayers();
 		void listPlayers();
+
+		friend ostream& operator<<(ostream& os, const Game& game);
+		friend istream& operator>>(istream& is, const Game& game);
+		//const Game& Game::operator=(const Game& game);
 	};
 }
 

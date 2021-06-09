@@ -119,6 +119,8 @@ void printAddress(Game g) {
 }
 
 
+
+
 /*
 *..................................................................
 * FUNCTION lab2
@@ -134,14 +136,13 @@ void lab2() {
 	
 
 	cout << "----------------------------------------------------------------" << endl;
-
 	cout << "This is Lab 2!" << endl;
 	/*Game game;
 	Game game1("Game1");
 	Game game2("Game2", 4);
 	Game game3("Game3", 4, 2000);
 
-	game.printGame();
+	game.printGame(); game.creat
 	cout << "game takes " << sizeof(game) << " bytes" << endl;
 	game1.printGame();
 	cout << "game1 takes " << sizeof(game1) << " bytes" << endl;
