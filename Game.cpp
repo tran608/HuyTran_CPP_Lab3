@@ -52,3 +52,21 @@ double Game::getTimeout() { return this->timeout; };
 void Game::setName(string name) { this->name = name; };
 void Game::setNumPlayers(int numPlayers) { this->numPlayers = numPlayers; };
 void Game::setTimeout(double timeout) { this->timeout = timeout; };
+
+vector<Player> Game::createPlayers() {
+	int i = 0;
+	for (i = 0; i < this->numPlayers; i++) {
+		string tempName;
+		cout << "Please enter the name of player " << i << ": ";
+		cin >> tempName;
+		Player tempPlayer(tempName);
+		this->playersList.push_back(tempPlayer);
+	}
+	return this->playersList;
+}
+
+void Game::listPlayers() {
+	for (Player player : this->playersList) {
+		player.printPlayer();
+	}
+}

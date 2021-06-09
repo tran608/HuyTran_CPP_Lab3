@@ -7,11 +7,12 @@
 *******************************************************************/
 #include<iostream>
 #include<string>
+#include <vector>
 
 //Global constants
 using namespace std;
 const double NO_TIMEOUT(-1);
-
+#include "Player.h"
 
 
 //Namespace
@@ -23,6 +24,7 @@ namespace CST8219 {
 		string name;
 		int numPlayers;
 		double timeout;
+		vector<Player> playersList;
 
 	public:
 		//Declaring constructors, destructor and methods
@@ -41,6 +43,8 @@ namespace CST8219 {
 		void setName(string name);
 		void setNumPlayers(int numPlayers);
 		void setTimeout(double timeout);
+		vector<Player> createPlayers();
+		void listPlayers();
 	};
 }
 

@@ -11,6 +11,7 @@
 #include<string>
 #include<vector>
 #include"Game.h"
+
 using namespace std;
 
 /*Function header*/
@@ -22,6 +23,7 @@ void changeGame(Game, string, int, double);
 Game createOneGame();
 
 vector<Game> createMultipleGames(int numberOfGames);
+
 
 //global constant
 #define usingNamespaces true

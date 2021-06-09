@@ -68,6 +68,7 @@ vector<Game> createMultipleGames(int numberOfGames) {
 	}
 	return gameList;
 }
+
 /*
 *..................................................................
 * FUNCTION changeGame
