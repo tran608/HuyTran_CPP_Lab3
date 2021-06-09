@@ -6,18 +6,9 @@
 * COURSE: CST8219_301
 *******************************************************************/
 #include "Game.h"
-using namespace cst8219;
 
 //Constructors
-Game::Game() : Game("[Noname]") {}
 
-Game::Game(string name) : Game(name,1) {}
-
-Game::Game(string name, int nPlayers) {
-	this->name = name;
-	this->numPlayers = nPlayers;
-	this->timeout = NO_TIMEOUT;
-}
 
 Game::Game(string name, int nPlayers, double duration) {
 	this->numPlayers = nPlayers;

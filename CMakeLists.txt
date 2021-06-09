@@ -9,6 +9,6 @@ cmake_minimum_required (VERSION 3.8)
 project ("Lab3_C++")
 
 # Add source to this project's executable.
-add_executable (Lab3_C++       "CppDemos.cpp" "CppDemos.h" "Game.cpp" "Game.h")
+add_executable (Vo746_Nguyen608_Lab3_C++ "CppDemos.cpp" "CppDemos.h" "Game.cpp" "Game.h"  "Player.h" "Player.cpp")
 
 # TODO: Add tests and install targets if needed.

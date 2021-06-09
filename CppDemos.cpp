@@ -203,7 +203,6 @@ void lab1() {
 	/*Case 2 is set to true*/
 #elif usingNamespaces 
 #pragma message ("Using namespaces")
-	using namespace cst8219;
 
 	/*
 	*..................................................................

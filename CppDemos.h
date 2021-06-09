@@ -12,7 +12,6 @@
 #include<vector>
 #include"Game.h"
 using namespace std;
-using namespace cst8219;
 
 /*Function header*/
 void funcMsg();

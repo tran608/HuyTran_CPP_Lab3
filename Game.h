@@ -13,8 +13,9 @@ using namespace std;
 const double NO_TIMEOUT(-1);
 
 
+
 //Namespace
-namespace cst8219 {
+namespace CST8219 {
 	class Game {
 
 	private:
@@ -25,10 +26,8 @@ namespace cst8219 {
 
 	public:
 		//Declaring constructors, destructor and methods
-		Game();
-		Game(string);
-		Game(string, int);
-		Game(string, int, double);
+		
+		Game(string = "[Noname]", int = 0, double = NO_TIMEOUT);
 		Game(Game*);
 		~Game();
 		void printGame();
@@ -45,6 +44,7 @@ namespace cst8219 {
 	};
 }
 
+using namespace CST8219;
 
 
 
