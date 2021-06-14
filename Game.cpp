@@ -16,9 +16,11 @@ Game::Game(string name, int nPlayers, double duration) {
 	this->name = name;
 }
 
-Game::Game(Game* g) {
-	*this = *g;
-};
+Game::Game(Game* g) 
+	: Game(g->getName(), g->getNumPlayers(), g->getTimeout()){};
+
+Game::Game(Game& g)
+	: Game(g.getName(), g.getNumPlayers(), g.getTimeout()) {};
 
 
 //Destructors
@@ -112,52 +114,44 @@ bool Game::operator!=(const Game& game) {
 }
 
 Game Game::operator++(int n) {
-	if (this->getNumPlayers() >= 10) {
-		cout << "Incrementing here is not possible as it would make the numPlayers >= 10" << endl;
-		return NULL;
-	}
-	else {
-		Game copy(this);
-		this->setNumPlayers(this->getNumPlayers() + 1);
-		return copy;
-	}
+	Game copy1(this);
+	if (this->numPlayers < 10) {
+		this->numPlayers++;
+		return copy1;
+	} 
+	cout << "Incrementing here is not possible as it would make the numPlayers >= 10" << endl;
+	return copy1;
 	
 }
 
 Game Game::operator++() {
-	if (this->getNumPlayers() >= 10) {
-		cout << "Incrementing here is not possible as it would make the numPlayers >= 10" << endl;
-		return NULL;
-	}
-	else {
-		this->setNumPlayers(this->getNumPlayers() + 1);
+	if (this->numPlayers < 10) {
+		this->numPlayers++;
 		return this;
 	}
+	cout << "Incrementing here is not possible as it would make the numPlayers >= 10" << endl;
+	return this;
 	
 }
 
 Game Game::operator--(int n) {
-	if (this->getNumPlayers() <= 1) {
-		cout << "Decrementing here is not possible as it would make the numPlayers < 1" << endl;
-		return NULL;
+	Game copy1(this);
+	if (this->numPlayers > 1) {
+		this->numPlayers--;
+		return copy1;
 	}
-	else {
-		Game copy(this);
-		this->setNumPlayers(this->getNumPlayers() - 1);
-		return copy;
-	}
+	cout << "Decrementing here is not possible as it would make the numPlayers < 1" << endl;
+	return copy1;
+	
 }
 
 Game Game::operator--() {
-	if (this->getNumPlayers() <= 1) {
-		cout << "Decrementing here is not possible as it would make the numPlayers < 1" << endl;
-		return NULL;
-	}
-	else {
-		this->setNumPlayers(this->getNumPlayers() - 1);
+	if (this->numPlayers > 1) {
+		this->numPlayers--;
 		return this;
 	}
-
+	cout << "Decrementing here is not possible as it would make the numPlayers < 1" << endl;
+	return this;
 }
 
 //Getters and Setters

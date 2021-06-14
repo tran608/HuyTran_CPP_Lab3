@@ -31,7 +31,8 @@ namespace CST8219 {
 		//Declaring constructors, destructor and methods
 		
 		Game(string = "[Noname]", int = 0, double = NO_TIMEOUT);
-		Game(Game*);
+		Game(Game* g);
+		Game(Game& g);
 		~Game();
 		void printGame();
 		void setGame(string, int, double);

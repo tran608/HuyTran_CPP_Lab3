@@ -26,8 +26,8 @@ Player::Player(const Player& copy) {
 }
 
 //constructor
-Player::Player(Player* copy) {
-	*this = *copy;
+Player::Player(Player* copy1) {
+	*this = *copy1;
 }
 
 bool Player::operator==(const Player& player) {
@@ -42,9 +42,9 @@ bool Player::operator!=(const Player& player) {
 }
 
 Player Player::operator++(int n) {
-		Player copy(this);
+		Player copy1(this);
 		this->setPoints(this->getPoints() + 1);
-		return copy;
+		return copy1;
 
 }
 

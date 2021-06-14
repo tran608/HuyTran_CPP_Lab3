@@ -113,21 +113,22 @@ void printAddress(Game g) {
 }
 
 void testOperators() {
-	Game original;
+	Game original("Game", 5, 1000);
 	Game copy(original); // copy constructor by reference
-	cout << "Original is: " << original << " copy is: " << copy << endl;
-	//cout << "Increment original: " << original++ << endl;
-	//cout << "Increment copy:" << ++copy << endl;
-	//cout << "Decrement original:" << --original << endl;
-	//cout << "Decrement copy:" << copy-- << endl;
-	//// should be true:
-	//cout << "Compare equality 1: " << (original == copy) << endl;
-	////should be false:
-	//cout << "Compare equality 2: " << (--original == ++copy) << endl;
-	////should be true:
-	//cout << "Compare inequality: " << (original != copy) << endl;
-	//// This should make original = copy, and then return a Vehicle for output:
-	//cout << "Assignment operator: " << (original = copy) << endl;
+	cout << "Original is: " << original << "copy is: " << copy << endl;
+	cout << "Increment original: " << original++ << endl;
+	cout << "Increment copy:" << ++copy << endl;
+	cout << "Decrement original:" << --original << endl;
+	cout << "Decrement copy:" << copy-- << endl;
+	// should be true:
+	cout << boolalpha << "Compare equality 1: " << (original == copy) << endl;
+	//should be false:
+	cout << boolalpha << "Compare equality 2: " << (--original == ++copy) << endl;
+	//should be true:
+	cout << boolalpha << "Compare inequality: " << (original != copy) << endl;
+	// This should make original = copy, and then return a Vehicle for output:
+	original = copy;
+	cout << "Assignment operator: " << (original) << endl;
 }
 
 void lab3() {
@@ -141,7 +142,7 @@ void lab3() {
 	Game game2("Game2", 4);
 	Game game3("Game3", 4, 2000);
 
-	game.printGame(); game.creat
+	game.printGame();
 	cout << "game takes " << sizeof(game) << " bytes" << endl;
 	game1.printGame();
 	cout << "game1 takes " << sizeof(game1) << " bytes" << endl;
@@ -166,8 +167,6 @@ void lab3() {
 	//vector<Game> gameList = createMultipleGames(numberOfGames);
 
 
-
-	return;
 }
 
 
@@ -303,7 +302,7 @@ void funcMsg() {
 	*..................................................................
 */
 int main(int argc, char** argv) {
-	//lab3();
+	lab3();
 	lab1();
 	lab2();
 	system("pause");
