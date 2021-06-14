@@ -48,15 +48,19 @@ namespace CST8219 {
 		void listPlayers();
 
 		friend ostream& operator<<(ostream& os, const Game& game);
-		friend istream& operator>>(istream& is, const Game& game);
+		friend istream& operator>>(istream& is, Game& game);
 		
 		const Game& Game::operator=(const Game& game);
 		bool Game::operator==(const Game& game);
 		bool Game::operator!=(const Game& game);
 		Game Game::operator++();
 		Game Game::operator++(int n);
+		Game Game::operator--();
+		Game Game::operator--(int n);
 	};
+
 }
+
 
 using namespace CST8219;
 

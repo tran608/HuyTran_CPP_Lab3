@@ -10,7 +10,9 @@
 #include <iostream>
 #include<string>
 #include<vector>
+
 #include"Game.h"
+
 
 using namespace std;
 
@@ -18,6 +20,7 @@ using namespace std;
 void funcMsg();
 void lab1();
 void lab2();
+void lab3();
 void printAddress(Game);
 void changeGame(Game, string, int, double);
 Game createOneGame();

@@ -7,6 +7,7 @@
 *******************************************************************/
 #include "CppDemos.h"
 
+
 /*
 *..................................................................
 * FUNCTION createOneGame()
@@ -94,14 +95,7 @@ void changeGame(Game &g, string n = "[Noname]", int p = 1, double t = -1) {
 *..................................................................
 */
 void testReferences() {
-	Game game1 = Game("Game1", 1, 1);
-	game1.printGame();
-	Game game2(game1);
-	game2.printGame();
-	Game game3(&game2);
-	game3.printGame();
-	changeGame(game3);
-	game3.printGame();
+	
 }
 
 /*
@@ -118,7 +112,63 @@ void printAddress(Game g) {
 	cout << "Game: " << g.getName() << " - Address: " << &g << endl;
 }
 
+void testOperators() {
+	Game original;
+	Game copy(original); // copy constructor by reference
+	cout << "Original is: " << original << " copy is: " << copy << endl;
+	//cout << "Increment original: " << original++ << endl;
+	//cout << "Increment copy:" << ++copy << endl;
+	//cout << "Decrement original:" << --original << endl;
+	//cout << "Decrement copy:" << copy-- << endl;
+	//// should be true:
+	//cout << "Compare equality 1: " << (original == copy) << endl;
+	////should be false:
+	//cout << "Compare equality 2: " << (--original == ++copy) << endl;
+	////should be true:
+	//cout << "Compare inequality: " << (original != copy) << endl;
+	//// This should make original = copy, and then return a Vehicle for output:
+	//cout << "Assignment operator: " << (original = copy) << endl;
+}
 
+void lab3() {
+
+
+
+	cout << "----------------------------------------------------------------" << endl;
+	cout << "This is Lab 3!" << endl;
+	/*Game game;
+	Game game1("Game1");
+	Game game2("Game2", 4);
+	Game game3("Game3", 4, 2000);
+
+	game.printGame(); game.creat
+	cout << "game takes " << sizeof(game) << " bytes" << endl;
+	game1.printGame();
+	cout << "game1 takes " << sizeof(game1) << " bytes" << endl;
+	game2.printGame();
+	cout << "game2 takes " << sizeof(game2) << " bytes" << endl;
+	game3.printGame();
+	cout << "game3 takes " << sizeof(game3) << " bytes" << endl;*/
+
+	/*testReferences();
+	int numberOfGames;
+	cout << "How many games do you want to create? ";
+	while (!(cin >> numberOfGames) || numberOfGames < 0) {
+		cout << "Please enter a valid number larger than 0: ";
+		cin.clear();
+		cin.ignore(256, '\n');
+	};
+	cin.ignore(256, '\n');*/
+
+	testOperators();
+
+
+	//vector<Game> gameList = createMultipleGames(numberOfGames);
+
+
+
+	return;
+}
 
 
 /*
@@ -253,6 +303,7 @@ void funcMsg() {
 	*..................................................................
 */
 int main(int argc, char** argv) {
+	//lab3();
 	lab1();
 	lab2();
 	system("pause");

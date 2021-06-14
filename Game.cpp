@@ -20,6 +20,7 @@ Game::Game(Game* g) {
 	*this = *g;
 };
 
+
 //Destructors
 Game::~Game() {
 	cout << "In destructor " << this->name << endl;
@@ -51,12 +52,12 @@ void Game::setGame(string n, int p, double t) {
 //	return this;
 //}
 
-ostream&  operator <<(ostream& os, const Game& game) {
+ostream& CST8219::operator<<(ostream& os, const Game& game) {
 	os << "Name: " << game.getName() << " - Numplayers: " << game.getNumPlayers() << " - Timeout: " << game.getTimeout() << endl;
 	return os;
 }
 
-istream& operator>>(istream& is, Game& game) {
+istream& CST8219::operator>>(istream& is, Game& game) {
 	string name;
 	int numplayers;
 	double timeout;
@@ -110,16 +111,54 @@ bool Game::operator!=(const Game& game) {
 	return !(operator == (game));
 }
 
-/*Game Game::operator++(int n) {
-	Game copy(this);
-	this->setNumerator(this->getNumerator() + 1);
-	return copy;
+Game Game::operator++(int n) {
+	if (this->getNumPlayers() >= 10) {
+		cout << "Incrementing here is not possible as it would make the numPlayers >= 10" << endl;
+		return NULL;
+	}
+	else {
+		Game copy(this);
+		this->setNumPlayers(this->getNumPlayers() + 1);
+		return copy;
+	}
+	
 }
 
 Game Game::operator++() {
-	this->setNumerator(this->getNumerator() + 1);
-	return this;
-}*/
+	if (this->getNumPlayers() >= 10) {
+		cout << "Incrementing here is not possible as it would make the numPlayers >= 10" << endl;
+		return NULL;
+	}
+	else {
+		this->setNumPlayers(this->getNumPlayers() + 1);
+		return this;
+	}
+	
+}
+
+Game Game::operator--(int n) {
+	if (this->getNumPlayers() <= 1) {
+		cout << "Decrementing here is not possible as it would make the numPlayers < 1" << endl;
+		return NULL;
+	}
+	else {
+		Game copy(this);
+		this->setNumPlayers(this->getNumPlayers() - 1);
+		return copy;
+	}
+}
+
+Game Game::operator--() {
+	if (this->getNumPlayers() <= 1) {
+		cout << "Decrementing here is not possible as it would make the numPlayers < 1" << endl;
+		return NULL;
+	}
+	else {
+		this->setNumPlayers(this->getNumPlayers() - 1);
+		return this;
+	}
+
+}
 
 //Getters and Setters
 string Game::getName() const { return this->name; };
