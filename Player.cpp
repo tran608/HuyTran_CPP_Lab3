@@ -30,6 +30,17 @@ Player::Player(Player* copy) {
 	*this = *copy;
 }
 
+bool Player::operator==(const Player& player) {
+	bool isEqual = false;
+
+	isEqual = (this->getPoints() == player.getPoints());
+	return isEqual;
+}
+
+bool Player::operator!=(const Player& player) {
+	return !(operator == (player));
+}
+
 Player Player::operator++(int n) {
 		Player copy(this);
 		this->setPoints(this->getPoints() + 1);

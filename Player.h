@@ -17,7 +17,8 @@ namespace CST8219 {
 		Player(Player* copy);
 		int getPoints() const;
 		void setPoints(int points);
-
+		bool Player::operator==(const Player& points);
+		bool Player::operator!=(const Player& points);
 		Player Player::operator++();
 		Player Player::operator++(int points);
 
