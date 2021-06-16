@@ -7,15 +7,16 @@
 *******************************************************************/
 #include "Game.h"
 
-//Constructors
 
 
+//Constructor to initialize fields
 Game::Game(string name, int nPlayers, double duration) {
 	this->numPlayers = nPlayers;
 	this->timeout = duration;
 	this->name = name;
 }
 
+//Copy constructors
 Game::Game(Game* g) 
 	: Game(g->getName(), g->getNumPlayers(), g->getTimeout()){};
 
@@ -42,23 +43,47 @@ void Game::printGame() {
 	cout << "Name: " << this->name << " - Numplayers: " << this->numPlayers << " - Timeout: " << this->timeout <<endl;
 }
 
+/*
+*..................................................................
+* FUNCTION setGame
+* Return: void
+* Parameters: string n, int p, double t
+* Purpose: Set attributes based on the parameter list
+* Return type: void
+* Called function: none
+*..................................................................
+*/
 void Game::setGame(string n, int p, double t) {
 	this->name = n;
 	this->numPlayers = p;
 	this->timeout = t;
 }
 
-//const Game& Game::operator=(const Game& game) {
-//	this->setName(game.getName());
-//	this->setDenominator(f.getDenominator());
-//	return this;
-//}
-
+/*
+*..................................................................
+* FUNCTION operator<<
+* Return: os
+* Parameters: ostream& os, const Game& game
+* Purpose: Printing a game
+* Return type: ostream&
+* Called function: none
+*..................................................................
+*/
 ostream& CST8219::operator<<(ostream& os, const Game& game) {
 	os << "Name: " << game.getName() << " - Numplayers: " << game.getNumPlayers() << " - Timeout: " << game.getTimeout() << endl;
 	return os;
 }
 
+/*
+*..................................................................
+* FUNCTION operator>>
+* Return: is
+* Parameters: istream& is, Game& game
+* Purpose: Getting input of a game
+* Return type: istream&
+* Called function: none
+*..................................................................
+*/
 istream& CST8219::operator>>(istream& is, Game& game) {
 	string name;
 	int numplayers;
@@ -92,6 +117,17 @@ istream& CST8219::operator>>(istream& is, Game& game) {
 
 };
 
+
+/*
+*..................................................................
+* FUNCTION operator=
+* Return: this
+* Parameters: const Game&
+* Purpose: Assign all attributes of 1 game to another game
+* Return type: const Game&
+* Called function: none
+*..................................................................
+*/
 const Game& Game::operator=(const Game& game) {
 	this->setName(game.getName());
 	this->setNumPlayers(game.getNumPlayers());
@@ -99,6 +135,16 @@ const Game& Game::operator=(const Game& game) {
 	return this;
 }
 
+/*
+*..................................................................
+* FUNCTION operator==
+* Return: isEqual
+* Parameters: const Game& game
+* Purpose: Checks if 2 games are equal
+* Return type: bool
+* Called function: none
+*..................................................................
+*/
 bool Game::operator==(const Game& game) {
 	bool isEqual = false;
 	
@@ -109,10 +155,30 @@ bool Game::operator==(const Game& game) {
 	return isEqual;
 }
 
+/*
+*..................................................................
+* FUNCTION operator!=
+* Return: bool
+* Parameters: const Game& game
+* Purpose: Checks if 2 games are not equal
+* Return type: bool
+* Called function: none
+*..................................................................
+*/
 bool Game::operator!=(const Game& game) {
 	return !(operator == (game));
 }
 
+/*
+*..................................................................
+* FUNCTION operator++
+* Return: Game
+* Parameters: int n
+* Purpose: Increment numPlayers
+* Return type: Game
+* Called function: none
+*..................................................................
+*/
 Game Game::operator++(int n) {
 	Game copy1(this);
 	if (this->numPlayers < 10) {
@@ -124,6 +190,16 @@ Game Game::operator++(int n) {
 	
 }
 
+/*
+*..................................................................
+* FUNCTION operator++
+* Return: Game
+* Parameters: none
+* Purpose: Increment numPlayers
+* Return type: Game
+* Called function: none
+*..................................................................
+*/
 Game Game::operator++() {
 	if (this->numPlayers < 10) {
 		this->numPlayers++;
@@ -134,6 +210,16 @@ Game Game::operator++() {
 	
 }
 
+/*
+*..................................................................
+* FUNCTION operator--
+* Return: Game
+* Parameters: int n
+* Purpose: Decrement numPlayers
+* Return type: Game
+* Called function: none
+*..................................................................
+*/
 Game Game::operator--(int n) {
 	Game copy1(this);
 	if (this->numPlayers > 1) {
@@ -145,6 +231,16 @@ Game Game::operator--(int n) {
 	
 }
 
+/*
+*..................................................................
+* FUNCTION operator--
+* Return: Game
+* Parameters: none
+* Purpose: Decrement numPlayers
+* Return type: Game
+* Called function: none
+*..................................................................
+*/
 Game Game::operator--() {
 	if (this->numPlayers > 1) {
 		this->numPlayers--;
@@ -162,6 +258,16 @@ void Game::setName(string name) { this->name = name; };
 void Game::setNumPlayers(int numPlayers) { this->numPlayers = numPlayers; };
 void Game::setTimeout(double timeout) { this->timeout = timeout; };
 
+/*
+*..................................................................
+* FUNCTION createPlayers
+* Return: vector<Player>
+* Parameters: none
+* Purpose: Create a vector of players
+* Return type: vector<Player>
+* Called function: none
+*..................................................................
+*/
 vector<Player> Game::createPlayers() {
 	int i;
 	for (i = 0; i < this->numPlayers; i++) {
@@ -174,6 +280,16 @@ vector<Player> Game::createPlayers() {
 	return this->playersList;
 }
 
+/*
+*..................................................................
+* FUNCTION listPlayers
+* Return: void
+* Parameters: none
+* Purpose: Print the list of players
+* Return type: void
+* Called function: none
+*..................................................................
+*/
 void Game::listPlayers() {
 	for (Player player : this->playersList) {
 		player.printPlayer();

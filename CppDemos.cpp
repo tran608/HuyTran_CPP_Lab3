@@ -112,6 +112,16 @@ void printAddress(Game g) {
 	cout << "Game: " << g.getName() << " - Address: " << &g << endl;
 }
 
+/*
+*..................................................................
+* FUNCTION testReferences
+* Return: void
+* Parameters: void
+* Purpose: testing operators
+* Return type: void
+* Called function: lab2()
+*..................................................................
+*/
 void testOperators() {
 	Game original("Game", 5, 1000);
 	Game copy(original); // copy constructor by reference
@@ -131,6 +141,17 @@ void testOperators() {
 	cout << "Assignment operator: " << (original) << endl;
 }
 
+
+/*
+*..................................................................
+* FUNCTION lab3
+* Return: void
+* Parameters: void
+* Purpose: to run lab3's program
+* Called function: main()
+* Return type: void
+*..................................................................
+*/
 void lab3() {
 
 
@@ -182,8 +203,6 @@ void lab3() {
 */
 void lab2() {
 
-	
-
 	cout << "----------------------------------------------------------------" << endl;
 	cout << "This is Lab 2!" << endl;
 	/*Game game;
@@ -212,8 +231,6 @@ void lab2() {
 
 	vector<Game> gameList = createMultipleGames(numberOfGames);
 	cout << "End of method" << endl;
-
-
 
 	return;
 }
@@ -292,14 +309,14 @@ void funcMsg() {
 }
 
 /*
-	*..................................................................
-	* FUNCTION main 
-	* Return: Integer - success of operation
-	* Parameters: int argc, char** argv
-	* Purpose: Main function
-	* Called function: none
-	* Return type: int
-	*..................................................................
+*..................................................................
+* FUNCTION main 
+* Return: Integer - success of operation
+* Parameters: int argc, char** argv
+* Purpose: Main function
+* Called function: none
+* Return type: int
+*..................................................................
 */
 int main(int argc, char** argv) {
 	lab3();

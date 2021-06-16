@@ -5,6 +5,8 @@
 * PROFESSOR: Paulo Sousa
 * COURSE: CST8219_301 
 *******************************************************************/
+//Necessary Libraries
+#include "Player.h"
 #include<iostream>
 #include<fstream>
 #include<string>
@@ -13,7 +15,8 @@
 //Global constants
 using namespace std;
 const double NO_TIMEOUT(-1);
-#include "Player.h"
+
+
 
 
 //Namespace
@@ -29,7 +32,6 @@ namespace CST8219 {
 
 	public:
 		//Declaring constructors, destructor and methods
-		
 		Game(string = "[Noname]", int = 0, double = NO_TIMEOUT);
 		Game(Game* g);
 		Game(Game& g);
@@ -48,6 +50,7 @@ namespace CST8219 {
 		vector<Player> createPlayers();
 		void listPlayers();
 
+		//Defining operators
 		friend ostream& operator<<(ostream& os, const Game& game);
 		friend istream& operator>>(istream& is, Game& game);
 		

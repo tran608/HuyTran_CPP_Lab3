@@ -24,6 +24,8 @@ void lab3();
 void printAddress(Game);
 void changeGame(Game, string, int, double);
 Game createOneGame();
+void testOperators();
+void testReferences();
 
 
 vector<Game> createMultipleGames(int numberOfGames);
